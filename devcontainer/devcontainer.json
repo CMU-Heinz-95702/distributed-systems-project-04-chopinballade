@@ -1,0 +1,16 @@
+{
+  "name": "Java Servlet Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": [
+    "--init",
+    "--network=host"
+  ],
+  "extensions": [
+    "vscjava.vscode-java-pack"
+  ],
+  "forwardPorts": [8080],
+  "postCreateCommand": "mvn clean package"
+}
